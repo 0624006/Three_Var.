@@ -31,7 +31,7 @@ $(function () {
 
 
 	var snow_2_Fragment = document.createDocumentFragment();
-	var snow_2num=30;
+	var snow_2num=50;
 	for(var i=0; i<snow_2num; i++){
 		var snow2_t = document.createElement("div");
 		snow2_t.className = "snow2";
