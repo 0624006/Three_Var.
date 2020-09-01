@@ -16,12 +16,6 @@ $(function () {
 	logo_detime += 1;
 	document.getElementsByClassName("Merry_Christmas_fill")[0].setAttribute("style", "animation:"+`fill 2s linear infinite alternate ${logo_detime.toFixed(1)}s`);
 	
-	const fra_bg = document.getElementById("bg");
-	var svg_w = window.getComputedStyle(fra_bg, null).getPropertyValue("width");
-	var svg_h = window.getComputedStyle(fra_bg, null).getPropertyValue("height");
-	console.log(svg_w, svg_h);
-	$("#snow").css("width", svg_w).css("height", svg_h);
-	
 	/*****************/
 	/* svg bg_snow */
 	/*****************/
