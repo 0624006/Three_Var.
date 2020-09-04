@@ -85,7 +85,17 @@ $(function () {
 		
 	});
 
-
+	/******************/
+	/**    click     **/
+	/******************/
+	WR_NEW.addEventListener("click", function(){
+		alert("確定重新抽取？");
+	});
+	WR_NEXT.addEventListener("click", function(){
+		d = "0";//判斷按鍵enter
+		gift();
+		msg();
+	});
 
 	/******************/
 	/**svg tree_light**/
