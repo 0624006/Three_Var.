@@ -20,6 +20,7 @@ $(function () {
 	/* svg bg_snow */
 	/*****************/
 	var snow = document.getElementById("snow");
+
 	var snow_Fragment = document.createDocumentFragment();
 	var snownum=200;
 	for(var j=0; j<snownum; j++){
@@ -31,7 +32,7 @@ $(function () {
 
 
 	var snow_2_Fragment = document.createDocumentFragment();
-	var snow_2num=50;
+	var snow_2num=30;
 	for(var i=0; i<snow_2num; i++){
 		var snow2_t = document.createElement("div");
 		snow2_t.className = "snow2";
