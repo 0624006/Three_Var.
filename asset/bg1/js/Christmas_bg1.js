@@ -14,20 +14,6 @@ $(function () {
 	logo_detime += 1;
 	document.getElementsByClassName("Merry_Christmas_fill")[0].setAttribute("style", "animation:"+`fill 2s linear infinite alternate ${logo_detime.toFixed(1)}s`);
 
-
-	/*********************/
-	/*   svg elan_logo   */
-	/*********************/
-	// var elan_detime = 0.0;
-	// var elan_word = document.querySelectorAll("#elan_logo #elan_word");
-	// elan_word.forEach(function (num) {
-	// 	num.setAttribute("style", "stroke-dasharray:" + num.getTotalLength() + "; stroke-dashoffset: " + num.getTotalLength() + "; animation:" + `elan_line-anim 10s ease forwards ${elan_detime.toFixed(1)}s`);
-	// 	elan_detime += 0.3;
-	// 	console.log(num.getTotalLength());
-	// });
-	// elan_detime += 1;
-	// document.getElementsByClassName("Merry_Christmas_fill")[0].setAttribute("style", "animation:"+`elan_fill 2s linear infinite alternate ${elan_detime.toFixed(1)}s`);
-
 	/*****************/
 	/* svg lightball */
 	/*****************/
