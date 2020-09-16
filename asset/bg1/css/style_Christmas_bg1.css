@@ -68,20 +68,6 @@ svg{
 }
 
 /***********************/
-/*      elan_word      */
-/***********************/
-@keyframes elan_line-anim{
-    to{
-        stroke-dashoffset: 0;
-    }
-}
-@keyframes elan_fill{
-    to{
-        fill: white;
-    }
-}
-
-/***********************/
 /*      lightball      */
 /***********************/
 .ball_1{
@@ -115,66 +101,4 @@ svg{
 	to{
         fill: #ffd51a;
     }
-}
-
-/***********************/
-/*      snowMan        */
-/***********************/
-.snowMan_armL{
-	animation: snowMan_armL 1s linear infinite alternate;
-}
-@keyframes snowMan_armL{
-	0% {
-		transform-origin: 290px 320px;
-		transform: rotate(0deg);
-	}
-	50% {
-		transform-origin: 290px 320px;
-		transform: rotate(-65deg);
-	}
-	60% {
-		transform-origin: 290px 320px;
-		transform: rotate(-50deg);
-	}
-	70% {
-		transform-origin: 290px 320px;
-		transform: rotate(-65deg);
-	}
-	80% {
-		transform-origin: 290px 320px;
-		transform: rotate(-50deg);
-	}
-	100% {
-		transform-origin: 290px 320px;
-		transform: rotate(0deg);
-	}
-}
-.snowMan_armR{
-	animation: snowMan_armR 1s linear infinite alternate;
-}
-@keyframes snowMan_armR{
-	0% {
-		transform-origin: 318px 320px;
-		transform: rotate(0deg);
-	}
-	50% {
-		transform-origin: 318px 320px;
-		transform: rotate(65deg);
-	}
-	60% {
-		transform-origin: 318px 320px;
-		transform: rotate(50deg);
-	}
-	70% {
-		transform-origin: 318px 320px;
-		transform: rotate(65deg);
-	}
-	80% {
-		transform-origin: 318px 320px;
-		transform: rotate(50deg);
-	}
-	100% {
-		transform-origin: 318px 320px;
-		transform: rotate(0deg);
-	}
 }
