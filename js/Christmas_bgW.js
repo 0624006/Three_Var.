@@ -11,10 +11,16 @@ document.onreadystatechange = function () {
 
 
 $(function () {
-	var count_all = 0; //獎項總數量，判斷資料庫有無數量; Y: 撈取最小值; N:預設為0
+	var count_all = 0; //獎項總數量，判斷資料庫有無數量; Y: 撈取最大值; N:預設為0
+	var count_allDet = count_all; //php回傳值數量帶回最小值
 	if (count_all != '0') {
 		//當資料庫有數值，重整或誤按關閉就不跳出輸入視窗
 		$('#Fkindex').attr('style', 'opacity:0; z-index:-9999;');
+		/*
+		php迴圈跑五個，替換msg_wds，呼叫list_emAdd()產生框
+		msg_wds = `獎序：0 <br>部門：${list_all[count_str][0]}<br>工號：${list_all[count_str][1]}<br>姓名：${list_all[count_str][2]} `;
+		list_emAdd();
+		*/
 	};
 
 	// list_all:預設陣列 ; count_str:起始陣列數 ; 加入資料庫後可刪
@@ -52,7 +58,7 @@ $(function () {
 	/************************/
 	function enter_fu() {
 		//暫存當前獲獎人，與下方顯示當前抽取前五項連動
-		msg_wds = `獎序：0 <br>部門：${list_all[count_str][0]}<br>工號：${list_all[count_str][1]}<br>姓名：${list_all[count_str][2]} `;
+		msg_wds = `獎序：${count_allDet} <br>部門：${list_all[count_str][0]}<br>工號：${list_all[count_str][1]}<br>姓名：${list_all[count_str][2]} `;
 		console.log(msg_wds);
 		document.getElementById('msg').innerHTML = msg_wds;
 
@@ -78,7 +84,7 @@ $(function () {
 		//延遲1s自動抽取，此時案enter不會重複觸發
 		setTimeout(function () {
 			enter_fu();
-		}, 1000);
+		}, 800);
 	}
 
 	/******************/
@@ -86,8 +92,9 @@ $(function () {
 	/******************/
 	function btnSuc_fun() {
 		alert("clear");
-		count_all = 0;
+
 		/* 清除資料庫紀錄抽取編號之資料欄位，並重新整理 */
+
 		setTimeout(function () {
 			location.reload();
 		}, 500);
@@ -135,6 +142,17 @@ $(function () {
 						console.log(d);
 						list_emAdd();
 						d = "0";
+
+						if (count_allDet > count_all) {
+							count_allDet += 1;
+						}
+						if (count_allDet === 1) {
+							count_allDet = count_all;
+							count_allDet += 1;
+						}
+						if (count_allDet <= count_all) {
+							count_allDet -= 1;
+						}
 						gift();
 						msg();
 						return;
@@ -157,7 +175,8 @@ $(function () {
 	/**    click     **/
 	/******************/
 	$('#inpt_btn').off('click').on('click', function () {
-		count_all = $('#inpt_txt').val(); //存進資料庫
+		count_all = parseInt($('#inpt_txt').val()); // 暫存使用者輸入獎項總數值
+		count_allDet = count_all;
 		if (count_all <= 1) alert("獎項數量不可小於1，請重新輸入！");
 		else $('#Fkindex').fadeOut();
 	});
