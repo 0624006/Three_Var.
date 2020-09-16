@@ -1,3 +1,5 @@
+var d = "";  //作為判斷enter或方向鍵用
+
 /***********/
 /* Loading */
 /***********/
@@ -16,6 +18,7 @@ $(function () {
 	if (count_all != '0') {
 		//當資料庫有數值，重整或誤按關閉就不跳出輸入視窗
 		$('#Fkindex').attr('style', 'opacity:0; z-index:-9999;');
+		d="0";
 		/*
 		php迴圈跑五個，替換msg_wds，呼叫list_emAdd()產生框
 		msg_wds = `獎序：0 <br>部門：${list_all[count_str][0]}<br>工號：${list_all[count_str][1]}<br>姓名：${list_all[count_str][2]} `;
@@ -177,8 +180,12 @@ $(function () {
 	$('#inpt_btn').off('click').on('click', function () {
 		count_all = parseInt($('#inpt_txt').val()); // 暫存使用者輸入獎項總數值
 		count_allDet = count_all;
-		if (count_all <= 1) alert("獎項數量不可小於1，請重新輸入！");
-		else $('#Fkindex').fadeOut();
+		if (count_all <= 1) {
+			alert("獎項數量不可小於1，請重新輸入！");
+		} else {
+			$('#Fkindex').fadeOut();
+			d="0";
+		}
 	});
 	$('#WR_NEXT').off('click').on('click', function () {
 		list_emAdd();
