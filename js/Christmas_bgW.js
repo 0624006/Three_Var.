@@ -30,7 +30,6 @@ $(function () {
 	let list_all = [["MIS", "09136", "林鈺真"], ["MIS", "07076", "陳達韋"], ["MIS", "02001", "楊宗原"]];
 	var count_str = 0;
 
-	var d = "0";  //作為判斷enter或方向鍵用
 	var bgC = 1; //背景圖數
 	$("#iframe_bg" + bgC).toggleClass("bg"); //初始背景1
 	var msg_wds = ''; //當前獲獎人字串
